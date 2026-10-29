@@ -1,0 +1,116 @@
+/* Central do Encanador - Estilos Complementares */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #005BAA;
+  --color-primary-dark: #003f7a;
+  --color-primary-hover: #004a8c;
+  --color-bg-light: #F9FAFB;
+  --color-text-main: #111827;
+  --color-text-muted: #4B5563;
+  --color-border: #E5E7EB;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-text-main);
+  background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Offset para cabeçalho fixo (sticky header) */
+section[id], footer[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Sombra suave e visual moderno */
+.shadow-card {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shadow-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -4px rgba(0, 91, 170, 0.12), 0 6px 12px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Botão flutuante do WhatsApp com animação de pulso */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: rgba(37, 211, 102, 0.45);
+  animation: pulse-ring 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  z-index: -1;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+/* Transições suaves */
+.transition-smooth {
+  transition: all 0.25s ease-in-out;
+}
+
+/* Estilo para links ativos no menu */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Prevenção de overflow horizontal */
+body {
+  overflow-x: hidden;
+}
