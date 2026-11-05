@@ -3,9 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --color-primary: #005BAA;
-  --color-primary-dark: #003f7a;
-  --color-primary-hover: #004a8c;
+  --color-primary: #004AAD;
+  --color-primary-dark: #003274;
+  --color-primary-hover: #003E91;
+  --color-primary-light: #EBF2FF;
   --color-bg-light: #F9FAFB;
   --color-text-main: #111827;
   --color-text-muted: #4B5563;
@@ -16,7 +17,14 @@ html {
   scroll-behavior: smooth;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--color-text-main);
-  background-color: #FFFFFF;
+  background-color: #111827;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #111827;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, .font-heading {
@@ -39,49 +47,22 @@ section[id], footer[id] {
 
 .shadow-card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px -4px rgba(0, 91, 170, 0.12), 0 6px 12px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 28px -4px rgba(0, 74, 173, 0.12), 0 6px 12px -2px rgba(0, 0, 0, 0.05);
 }
 
-/* Botão flutuante do WhatsApp com animação de pulso */
+/* Botão flutuante do WhatsApp */
 .whatsapp-float {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 999;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(37, 211, 102, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
-}
-
-.whatsapp-pulse {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 9999px;
-  background-color: rgba(37, 211, 102, 0.45);
-  animation: pulse-ring 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-  z-index: -1;
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(37, 211, 102, 0.5);
 }
 
 /* Transições suaves */
